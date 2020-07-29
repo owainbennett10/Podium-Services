@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Services-Podium Home Improvements Ltd</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:description" content="OKB Desgin a Developer living in South Wales who developes websites." />
+    <link rel="stylesheet" href="Services.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+  </head>
+  <body>
+    <header class="clearfix">
+      <div class="headerContainer">
+        <div class="header-left">
+          <img src="Logo.png" style="width: 90px; height: 60px; margin-top: 1%;" />
+        </div>
+        <div class="header-right">
+          <label for="open">
+            <span class="hidden-desktop"></span>
+          </label>
+          <input type="checkbox" name="" id="open" />
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact Us</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="landing">
+      <section class="landing-shade d-flex flex-center-content text-center">
+        <div class="landing-text anim-fade-down">
+          <h1>
+            Podium Home <br />
+            Improvements Ltd
+          </h1>
+        </div>
+      </section>
+    </main>
+    <script>
+      // Button delay js
+      const button = document.getElementById("landing-button");
+      setTimeout(() => {
+        addAndRemoveClass(button, "opac-1", "opac-0");
+      }, 800);
+    </script>
+    <script>
+      // nav state
+      var showMobileNav = false;
+      var navToggleBtn = document.getElementById("nav-toggle");
+      // Get the navigation div
+      var nav = document.getElementById("nav-items");
+      // get an array of the navigation divs children
+      var navItems = nav.children;
+
+      drawNavIcon(); // This changes the nav icon depending on the state of the nav
+
+      navToggleBtn.addEventListener("click", (ev) => {
+        // this is called a tenary operator. you can google the meaning and usage
+        showMobileNav ? addAndRemoveClass(nav, "hide", "show") : addAndRemoveClass(nav, "show", "hide");
+
+        // this changes the state of the nav
+        showMobileNav = !showMobileNav;
+        drawNavIcon();
+      });
+
+      // loop through children of navigation div
+      for (let i = 0; i < navItems.length; i++) {
+        let el = navItems[i];
+        // the mouseenter event is triggered when the mouse hovers on an element
+        el.addEventListener("mouseenter", (e) => {
+          addClassToSpan(e, ["hover"], []);
+        });
+
+        // the mouseleave event fires when the mouse leaves an element
+        el.addEventListener("mouseleave", (e) => {
+          addClassToSpan(e, [], ["hover"]);
+        });
+      }
+
+      // add and remove an array of css classes to an event target
+      function addClassToSpan(ev, addStr, remStr) {
+        // element is the event target in this case the <a> HOME <span class="underline"></span> </a>
+        const element = ev.target;
+
+        // get the first child of the event target in this case is <span class="underline"></span>
+        const span = element.children[0];
+        if (span) {
+          // remove the provided css class
+          span.classList.remove(...remStr);
+          // add the provided css class
+          span.classList.add(...addStr);
+        }
+      }
+
+      function addAndRemoveClass(el, addCl, removecl) {
+        el.classList.remove(removecl);
+        el.classList.add(addCl);
+      }
+    </script>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-lg-3 first-column">
+          <h1>Our Services</h1>
+        </div>
+        <div class="col-md-8 col-lg-9 second-column">
+          <p>Please discover the services we can offer. If you have any questions please contact us.</p>
+        </div>
+      </div>
+    </div>
+    <div id="staff-container-div" class="outer-container-class">
+      <div id="container-div-1" class="inner-container-class">
+        <img
+          id="image-1"
+          class="images-class"
+          src="https://scontent.flhr3-1.fna.fbcdn.net/v/t1.0-9/116129882_119580689830974_9062069015238492415_n.jpg?_nc_cat=105&_nc_sid=110474&_nc_ohc=DLt6rZwJyyAAX-lWcVX&_nc_ht=scontent.flhr3-1.fna&oh=da564f27f5ac3ba7715b83457dde9d68&oe=5F45C35C"
+        />
+        <br />
+        <div id="text-div-1" class="text-class">
+          <h5><strong>Podium Home Improvements Outdoor Services</strong></h5>
+          <ul>
+            <li>Build Patio Areas</li>
+            <li>Garden Landscaping</li>
+            <li>Change Windows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mainfooter" role="contentinfo">
+      <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <!--Column1-->
+              <div class="footer-pad">
+                <h4>Page Links</h4>
+                <ul class="list-unstyled" tyle="font-size: 16px;">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#l">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <!--Column1-->
+              <div class="footer-pad">
+                <h4>Opening Hours</h4>
+                <ul class="list-unstyled" style="font-size: 16px;">
+                  <li>Monday : 09:00 – 17:00</li>
+                  <li>Tuesday : 09:00 – 17:00</li>
+                  <li>Wednesday 09:00 – 17:00</li>
+                  <li>Thursday &amp; Friday : 09:00 – 17:00</li>
+                  <li>Saturday - Sunday : Closed</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <!--Column1-->
+              <div class="footer-pad">
+                <h4>Get In Touch</h4>
+                <ul class="list-unstyled" tyle="font-size: 16px;">
+                  <a href="tel:07534 580188"> Mobile : 07534 580188</a>
+                  <br />
+                  <p>
+                    <a href=" mailto:podiumgroups@gmail.com" style="margin-left: -18px;">
+                      E-mail : podiumgroups<br />
+                      @gmail.com
+                    </a>
+                  </p>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <h4>Follow Us</h4>
+              <ul class="social-network social-circle">
+                <li>
+                  <a href="https://www.facebook.com/PodiumHomeImprovements/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-12 copy">
+              <p class="text-center">Podium Home Improvements Ltd © | Developed by OKB Design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
